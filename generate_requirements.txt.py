@@ -63,7 +63,7 @@ def main():
     current_file = Path(__file__).name
     python_files = [
         Path(f) for f in os.listdir(".")
-        if f.endswith(".py") and f != current_file and f != "generate_requirements.txt.py"
+        if f.endswith((".py", ".pyw")) and f != current_file and f != "generate_requirements.txt.pyw"
     ]
 
     if not python_files:
