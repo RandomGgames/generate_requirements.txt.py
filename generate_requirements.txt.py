@@ -80,7 +80,7 @@ def write_requirements(non_std_modules: set[str], output_path: str | Path = "req
         logger.warning(f"No non-standard modules detected; {json.dumps(str(path))} not generated")
         return
 
-    with path.open("w", encoding="utf-8", newline="\n") as f:
+    with path.open("w", encoding="utf-8") as f:
         for module in sorted(non_std_modules):
             f.write(f"{module}\n")
 
@@ -276,7 +276,7 @@ def bootstrap():
             handler.close()
             logger.removeHandler(handler)
 
-    input("Press Enter to exit...")
+    # input("Press Enter to exit...")
 
     return exit_code
 
